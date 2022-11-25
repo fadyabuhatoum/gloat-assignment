@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "unauthenticated-jupyter.fullname" . }}-test-connection"
+  labels:
+    {{- include "unauthenticated-jupyter.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "unauthenticated-jupyter.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

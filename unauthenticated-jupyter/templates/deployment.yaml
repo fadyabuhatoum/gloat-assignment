@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.unauthenticated.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.unauthenticated.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.unauthenticated.name }}
+    spec:
+      containers:
+      - image: {{ .Values.unauthenticated.image }}
+        name: {{ .Values.unauthenticated.containerName }}
+        command: ["/bin/sh","-c"]
+        args: ["start-notebook.sh; --NotebookApp.token='' "]
+        resources:
+          limits:
+            memory: {{ .Values.resources.jupyter.limits.memory }}
+            cpu: {{ .Values.resources.jupyter.limits.cpu  }}
