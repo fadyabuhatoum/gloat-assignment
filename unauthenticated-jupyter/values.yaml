@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 3
+replicaCount: 5
 
 tsunami:
   name: tsunami-scanner
@@ -19,8 +19,8 @@ tsunami:
     hostPath:
       path: /opt/logs
   env:
-    name: IP_TARGET
-    value: "172.17.0.9"
+    name: ip
+    value: ""
 
 unauthenticated:
   image: jupyter/base-notebook
