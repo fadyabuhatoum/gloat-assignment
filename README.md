@@ -14,7 +14,7 @@
 2. Make sure that you have pip3 installed. 
 
 The Script perform the following tasks: 
-1. Create a helm chart deployment b running this command : "helm install unauthenticated-jupyter unauthenticated-jupyter/ --values --values=unauthenticated-jupyter/values.yaml"\
+1. Create a helm chart deployment b running this command : " helm install unauthenticated-jupyter unauthenticated-jupyter/ --values unauthenticated-jupyter/values.yaml "
 2. waiting for the pods to be in running status .
 3. for each jupyter pod it create a tsunami pod and start to scan it by passing its IP as args . ( I add sleep(600) , because the average scanning will take **10 minutes** to scanning the pod ), so please make sure you will wait until the tsunami has finished scanning . 
 4. create a new logs directories and files for each tsunami pod

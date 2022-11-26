@@ -1,0 +1,31 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   labels:
+#     run: {{ .Values.tsunami.name }}
+#   name: {{ .Values.tsunami.name }}
+# spec:
+#   containers:
+#   - image: {{ .Values.tsunami.image.repository }}
+#     name: {{ .Values.tsunami.name }}
+#     env:
+#     - name: {{ .Values.tsunami.env.name  }}
+#       value: {{ .Values.tsunami.env.value  }}
+#     args:
+#     - --ip-v4-target= " {{ .Values.tsunami.env.value  }} " "
+#     - --scan-results-local-output-format=JSON
+#     - --scan-results-local-output-filename=logs/tsunami-output.json
+#     resources:
+#       requests:
+#         memory: {{ .Values.resources.tsunami.requests.memory  }}
+#         cpu: {{ .Values.resources.tsunami.requests.cpu  }}
+#       limits:
+#         memory: {{ .Values.resources.tsunami.limits.memory  }}
+#         cpu: {{ .Values.resources.tsunami.limits.cpu  }}
+#     volumeMounts:
+#     - mountPath: {{ .Values.tsunami.volumeMounts.mountPath }}
+#       name: {{ .Values.tsunami.volumeMounts.name }}
+#   volumes:
+#   - name: {{ .Values.tsunami.volumes.name }}
+#     hostPath:
+#       path: {{ .Values.tsunami.volumes.hostPath.path }}
