@@ -1,5 +1,5 @@
 # gloat-assignment
-
+fady force test
 **Actions taken so far :**
 
 1. Install the nmap >= 7.80 & ncrack >= 0.7 and build the tsunami-security-scanner app .
