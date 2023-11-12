@@ -2,13 +2,15 @@
 name: Task Template
 about: Use this template for creating new tasks in linea/zkevm
 title: ''
-labels: bug
+labels: ['operations']
 assignees: fadyabuhatoum
 
 ---
 
 ## Problem Statement
 <!-- Describe the problem that needs to be solved. Include the service the action pertains to and specify the network scope (Testnet or Mainnet or both). -->
+- [] Testnet
+- [] Mainnet
 
 ## Background and Context
 <!-- Provide any additional context about the problem here. Include diagrams/visual aids and links to other tickets or tasks, Slack links/conversations if applicable. -->
